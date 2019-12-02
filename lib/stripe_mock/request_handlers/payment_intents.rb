@@ -31,7 +31,7 @@ module StripeMock
             last_payment_error: last_payment_error
           )
         )
-        if params[:confirm]
+        if params[:confirm] && params[:confirmation_method] != 'manual'
           payment_intents[id] = succeeded_payment_intent(payment_intents[id])
         end
 
